@@ -1,5 +1,10 @@
 class Point
 {
+    constructor(x,y,z){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    };
     /*
     Use the class notation to create a class that represents a 3-dimensional point according to the following requirements:
 	The three variables representing the point coordinates should be initialized and added to the new object through the constructor function.
@@ -10,8 +15,17 @@ class Point
 
 	Allow access to the calculated distance from the origin (0,0,0) through a getter method
     */
-
-   
+    static distance(point1, point2){
+        return Math.sqrt(Math.pow((point1.x-point2.x),2) + Math.pow((point1.y-point2.y),2) + Math.pow((point1.z-point2.z),2));
+    };
+ 
+    get distanceFromOrigin(){
+        return Math.sqrt(Math.pow((this.x-0),2) + Math.pow((this.y-0),2) + Math.pow((this.z-0),2));
+    };
+ 
+ };
+  Point.prototype.distanceFrom = function (point){
+     return Math.sqrt(Math.pow((this.x-point.x),2) + Math.pow((this.y-point.y),2) + Math.pow((this.z-point.z),2));
 }
 
 // Please don't change the lines below
